@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*
+/**
  * main - prints to the screen using puts function
  * Return: If successful the exit status is zero
  */
