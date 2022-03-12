@@ -1,11 +1,9 @@
 #include <stdio.h>
 
 /*
- *main - Entry Point
- *
- * Return: Always 0 (Success)
- * */
-
+ * main - prints to the screen using puts function
+ * Return: If successful the exit status is zero
+ */
 int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
