@@ -22,18 +22,11 @@ int main(void)
 					continue;
 				for (n = 48; n <= 57; n++)
 				{
-					if (n <= j)
-						continue;
 					putchar(i);
 					putchar(j);
 					putchar(32);
 					putchar(k);
 					putchar(n);
-					if ((i == 57) && (j == 56))
-					{
-						if ((k == 57) && (n == 57))
-							break;
-					}
 					putchar(44);
 					putchar(32);
 				}
