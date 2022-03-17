@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * main - program to print putchar to the screen
@@ -6,8 +6,14 @@
  */
 int main(void)
 {
+	char text[9] = "_putchar";
+	int i;
 
-	printf("_putchar\n");
+	for (i = 0; i < 8; i++)
+	{
+		_putchar(text[i]);
+	}
+	_putchar('\n');
 
 	return (0);
 }
