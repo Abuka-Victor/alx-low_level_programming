@@ -20,12 +20,14 @@ void jack_bauer(void)
 				_putchar(':');
 				_putchar('0');
 				_putchar(j);
+				_putchar('\n');
 			}
 			else if (i > 9 && j > 9)
 			{
 				_putchar(i);
 				_putchar(':');
 				_putchar(j);
+				_putchar('\n');
 			}
 			else if (i < 9 && j > 9)
 			{
@@ -33,6 +35,7 @@ void jack_bauer(void)
 				_putchar(i);
 				_putchar(':');
 				_putchar(j);
+				_putchar('\n');
 			}
 			else if (j < 9 && i > 9)
 			{
@@ -40,6 +43,7 @@ void jack_bauer(void)
 				_putchar(':');
 				_putchar('0');
 				_putchar(j);
+				_putchar('\n');
 			}
 		}
 	}
