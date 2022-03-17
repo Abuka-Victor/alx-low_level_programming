@@ -7,11 +7,11 @@
  *
  * Return: Null Void
  */
-void print_square(int size);
+void print_square(int size)
 {
 	int i, j;
 
-	if (n <= 0)
+	if (size <= 0)
 	{
 		_putchar('\n');
 	}
