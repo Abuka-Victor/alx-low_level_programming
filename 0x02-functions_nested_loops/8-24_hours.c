@@ -27,7 +27,6 @@ void jack_bauer(void)
 			}
 			if (i == 50 && j > 51)
 				break;
-			}
 		}
 	}
 }
