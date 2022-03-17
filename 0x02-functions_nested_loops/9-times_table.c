@@ -18,7 +18,7 @@ void times_table(void)
 			flag = i * (j + 1);
 			if (product > 9)
 			{
-				first_digit = (product / 10) + 48; 
+				first_digit = (product / 10) + 48;
 				last_digit = (product % 10) + 48;
 				_putchar(first_digit);
 				_putchar(last_digit);
