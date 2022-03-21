@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 #include "2-strlen.c"
 
 /**
@@ -17,5 +18,6 @@ void rev_string(char *s)
 	{
 		*(s + index) = *(backup_str + track);
 		index++;
+		printf("track: %d, index: %d\n", track, index);
 	}
 }
