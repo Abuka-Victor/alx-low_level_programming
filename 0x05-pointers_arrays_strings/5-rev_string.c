@@ -10,14 +10,12 @@
 void rev_string(char *s)
 {
 	int track;
-	char ret[_strlen(s)];
-	int ret_index;
+	int index;
+	char *backup_str = s;
 
-	for (ret_index = 0, track = _strlen(s) - 1; track >= 0; track--)
+	for (index = 0, track = _strlen(s) - 1; track >= 0; track--)
 	{
-		ret[ret_index] = *(s + track);
-		ret_index++;
+		*(s + index) = *(backup_str + track);
+		index++;
 	}
-
-	*s = ret;
 }
