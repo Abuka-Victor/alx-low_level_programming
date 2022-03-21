@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdlib>
 #include "2-strlen.c"
 
 /**
@@ -12,7 +13,7 @@ void rev_string(char *s)
 {
 	int track;
 	int index = 0;
-	char *backup_str;
+	char *backup_str = malloc(sizeof(s));
 
 	while (*s)
 	{
