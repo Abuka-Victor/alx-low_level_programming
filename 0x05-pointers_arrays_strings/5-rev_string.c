@@ -14,7 +14,7 @@ void rev_string(char *s)
 	int index;
 	char *backup_str = s;
 
-	for (index = 0, track = _strlen(s) - 1; track >= 0; track--)
+	for (index = -1, track = _strlen(s) - 1; track >= 0; track--)
 	{
 		*(s + index) = *(backup_str + track);
 		index++;
