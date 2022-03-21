@@ -12,7 +12,7 @@ void rev_string(char *s)
 {
 	int track;
 	int index = 0;
-	char *backup_str = s;
+	char *backup_str = *s;
 
 	for (track = _strlen(s) - 1; track >= 0; track--)
 	{
