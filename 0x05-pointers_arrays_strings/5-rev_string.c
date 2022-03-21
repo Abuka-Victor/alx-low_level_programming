@@ -11,9 +11,9 @@ void rev_string(char *s)
 {
 	int track;
 	int index = 0;
-	char backup_str[500];
+	char backup_str[450];
 
-	while(*s)
+	while (*s)
 	{
 		backup_str[index] = *(s + index);
 		index++;
