@@ -11,10 +11,12 @@ char *_strcat(char *dest, char *src)
 {
 	int i;
 	int destLength = 0;
+	int counter = 0;
 
-	while (dest)
+	while (dest[counter] != '\0')
 	{
 		destLength++;
+		counter++;
 	}
 
 	for (i = 0; src[i] != '\n'; i++)
