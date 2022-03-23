@@ -10,29 +10,15 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	int count1 = 0, count2 = 0;
-	int i;
+	int count = 0, count2 = 0;
 
-	for (i = 0; s1[i] != '\0'; i++)
+	while (count == 0)
 	{
-		count1 += s1[i];
-	}
-
-	for (i = 0; s2[i] != '\0'; i++)
-	{
-		count2 += s2[i];
+		if ((*(s1 + i) == '\0') && (*(s2 + i) == '\0'))
+			break;
+		count = *(s1 + i) - *(s2 + i);
+		count2++;
 	}
 
-	if (count1 > count2)
-	{
-		return (15);
-	}
-	else if (count1 < count2)
-	{
-		return (-15);
-	}
-	else
-	{
-		return (0);
-	}
+	return (count);
 }
