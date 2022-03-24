@@ -11,7 +11,7 @@ char *leet(char *s)
 	char options[] = {65, 52, 69, 51, 79, 53, 84, 55, 76, 49};
 	int i, j;
 
-	for (i = 0; s[i] = '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		for (j = 0; j < 10; j += 2)
 		{
