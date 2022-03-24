@@ -8,30 +8,30 @@
  */
 void print_number(int n)
 {
-	int decimalNos = 1, keep, m;
+	unsigned int m, d, count;
 
 	if (n < 0)
 	{
 		_putchar(45);
-		keep = n * -1;
+		m = n * -1;
 	}
 	else
 	{
-		keep = n;
+		m = n;
 	}
 
-	keep = m;
 
-	while (keep > 9)
+	d = m;
+	count = 1;
+
+	while (d > 9)
 	{
-		keep /= 10;
-		decimalNos *= 10;
+		d /= 10;
+		count *= 10;
 	}
 
-	while (decimalNos > 0)
+	for (; count >= 1; count /= 10)
 	{
-		_putchar(((m / decimalNos) % 10) + 48);
-		decimalNos /= 10;
+		_putchar(((m / count) % 10) + 48);
 	}
-	_putchar('\n');
 }
