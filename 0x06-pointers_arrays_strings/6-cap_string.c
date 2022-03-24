@@ -2,26 +2,31 @@
 
 /**
  * cap_string - This Capitalizes any begining of a word
- * @n: This is the string
+ * @s: This is the string
  *
  * Return: Gives back the capitalized string
  */
-char *cap_string(char *n)
+char *cap_string(char *s)
 {
-	char sep[] = {10, 9, 32, 40, 41, 44, 59, 46, 33, 63, 34, 123, 125};
-	int i, j;
+	int count = 0, i;
+	int sep_words[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 
-	for (i = 0; n[i] != '\0'; i++)
+	if (*(s + count) >= 97 && *(s + count) <= 122)
+		*(s + count) = *(s + count) - 32;
+	count++;
+	while (*(s + count) != '\0')
 	{
-		for (j = 0; j < 13; j++)
+		for (i = 0; i < 13; i++)
 		{
-			if (n[i] == sep[j])
+			if (*(s + count) == sep_words[i])
 			{
-				if (n[i + 1] >= 97 && n[i + 1] <= 122)
-					n[i + 1] -= 32;
+				if ((*(s + (count + 1)) >= 97) && (*(s + (count + 1)) <= 122))
+					*(s + (count + 1)) = *(s + (count + 1)) - 32;
+				break;
 			}
 		}
+		count++;
 	}
 
-	return (n);
+	return (s);
 }
