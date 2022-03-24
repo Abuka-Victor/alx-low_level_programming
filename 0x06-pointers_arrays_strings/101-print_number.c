@@ -8,7 +8,7 @@
  */
 void print_number(int n)
 {
-	int decimalNos = 1, keep;
+	int decimalNos = 1, keep, m;
 
 	if (n < 0)
 	{
@@ -20,6 +20,8 @@ void print_number(int n)
 		keep = n;
 	}
 
+	keep = m;
+
 	while (keep > 9)
 	{
 		keep /= 10;
@@ -28,7 +30,7 @@ void print_number(int n)
 
 	while (decimalNos > 0)
 	{
-		_putchar(((n / decimalNos) % 10) + 48);
+		_putchar(((m / decimalNos) % 10) + 48);
 		decimalNos /= 10;
 	}
 	_putchar('\n');
