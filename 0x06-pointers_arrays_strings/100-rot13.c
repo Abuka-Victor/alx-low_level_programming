@@ -17,7 +17,10 @@ char *rot13(char *s)
 		for (j = 0; alphabet[j] != '\0'; j++)
 		{
 			if (s[i] == alphabet[j])
+			{
 				s[i] = cipher[j];
+				break;
+			}
 		}
 	}
 
