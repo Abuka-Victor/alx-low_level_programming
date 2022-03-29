@@ -9,16 +9,19 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int count = 0;
-	int i;
+	unsigned int count = 0, supposed_count = 0;
+	int i, j;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if ((s[0] == accept[0]) && (s[i] == accept[i]))
+		for (j = 0; accept[j] != '\0'; j++)
 		{
-			count++;
+			if (s[i] == accept[j])
+				count++;
 		}
+		supposed_count++;
+		if (count == 0 || count != supposed_count)
+			break;
 	}
 	return (count);
-
 }
