@@ -27,5 +27,5 @@ int is_prime(int n, int y)
  */
 int is_prime_number(int n)
 {
-	return (_is_prime(n, 1));
+	return (is_prime(n, 1));
 }
