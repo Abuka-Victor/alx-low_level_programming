@@ -11,7 +11,7 @@ int is_prime(int n, int y)
 {
 	if (n == 1)
 		return (0);
-	else if (n % y == 0 && y != n)
+	else if (n % y == 0 && y != n && y != 1)
 		return (0);
 	else if (n % y == 0 && y == n)
 		return (1);
