@@ -18,7 +18,8 @@ char *argstostr(int ac, char **av)
 
 	size = 0;
 	counter = 0;
-	// Get Malloc size
+
+
 	for (i = 1; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
