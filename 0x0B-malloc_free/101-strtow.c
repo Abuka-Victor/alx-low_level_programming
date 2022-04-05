@@ -2,35 +2,6 @@
 #include <stdlib.h>
 
 /**
- * countWords - Counts the number of words in a program
- * @str: The string to be counted
- * @sp: The starting point.
- *
- * Return: an int which is the number of words
- */
-int countWords(char *str, int *sp)
-{
-	int noWords = 0;
-
-	while (str[*sp] != '\0')
-	{
-		if (str[*sp] != ' ')
-		{
-			while (str[*sp] != '\0')
-			{
-				if (str[*sp] == ' ')
-					return (noWords);
-				noWords++;
-				*sp += 1;
-			}
-			return (noWords);
-		}
-		*sp += 1;
-	}
-	return (0);
-}
-
-/**
  * strtow - Splits a string into individual words
  * @str: This is the string to be split
  *
@@ -38,10 +9,10 @@ int countWords(char *str, int *sp)
  */
 char **strtow(char *str)
 {
-	int i, j, size, sp;
 	char **arr;
+	int i, j, k, wc, size;
 
-	if (str == NULL || str == '')
+	if (str == NULL || str == '\0')
 	       return (NULL);
 
 	if (str[0] != ' ')
@@ -56,11 +27,36 @@ char **strtow(char *str)
 	}
 
 	arr = malloc(sizeof(char *) * size);
-	sp = 0;
+	if (arr == NULL)
+		return (NULL);
 
-	for (i = 0; i < size; i++)
+
+	for (i = wc = 0; i < size; i++)
 	{
-		arr[i] = malloc(sizeof(char) * countWord(str, &sp));
+		for (j = wc; str[j] != '\0'; j++)
+		{
+			if (str[j] == ' ')
+				wc++;
+			if (str[j] != ' ' && (str[j + 1] == ' ' || str[j + 1] == '\0'))
+			{
+				arr[i] = malloc(sizeof(char) * (j - wc));
+				if (arr[i] == NULL)
+				{
+					int v;
+
+					for (v = 0; v <= i; v++)
+						free(arr[v]);
+					free(arr);
+					return (NULL);
+				}
+				break;
+			}
+		}
+		for (k = 0; wc <= j; wc++, k++)
+		{
+			arr[i][k] = str[wc];
+		}
+		arr[i][k] = '\0';
 	}
 
 	return (arr);
