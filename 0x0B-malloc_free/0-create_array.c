@@ -11,12 +11,14 @@
  */
 char *create_array(unsigned int size, char c)
 {
+	unsigned int i;
+	char *a;
+
 	if (size == 0)
 		return (NULL);
-	int i;
 
 	i = 0;
-	char *a = malloc(sizeof(c) * size);
+	a = malloc(sizeof(c) * size);
 	if (a == NULL)
 		return (NULL);
 	while (i < size)
