@@ -34,14 +34,7 @@ char **strtow(char *str)
 			{
 				arr[i] = malloc(sizeof(char) * (j - wc));
 				if (arr[i] == NULL)
-				{
-					int v;
-
-					for (v = 0; v <= i; v++)
-						free(arr[v]);
-					free(arr);
 					return (NULL);
-				}
 				break;
 			}
 		}
@@ -51,6 +44,5 @@ char **strtow(char *str)
 		}
 		arr[i][k] = '\0';
 	}
-
 	return (arr);
 }
