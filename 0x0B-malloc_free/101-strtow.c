@@ -12,7 +12,7 @@ char **strtow(char *str)
 	char **arr;
 	int i, j, k, wc, size;
 
-	if (str == NULL || str == '\0')
+	if (str == NULL || *str == '\0')
 	       return (NULL);
 
 	if (str[0] != ' ')
