@@ -27,12 +27,12 @@ char *argstostr(int ac, char **av)
 			size++;
 		}
 	}
-	size = size + (ac - 1);
+	size = size + ac;
 	str = malloc(size);
 	if (str == NULL)
 		return (NULL);
 
-	for (i = 1; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
 		{
