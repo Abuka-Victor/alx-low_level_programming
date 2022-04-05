@@ -21,11 +21,11 @@ int countWords(char *str, int *sp)
 				if (str[*sp] == ' ')
 					return (noWords);
 				noWords++;
-				*sp++;
+				*sp += 1;
 			}
 			return (noWords);
 		}
-		*sp++;
+		*sp += 1;
 	}
 	return (0);
 }
@@ -38,10 +38,10 @@ int countWords(char *str, int *sp)
  */
 char **strtow(char *str)
 {
-	int i, j, size, sp, spb;
+	int i, j, size, sp;
 	char **arr;
 
-	if (str == NULL || str == "")
+	if (str == NULL || str == '')
 	       return (NULL);
 
 	if (str[0] != ' ')
@@ -57,7 +57,6 @@ char **strtow(char *str)
 
 	arr = malloc(sizeof(char *) * size);
 	sp = 0;
-	spb = 0;
 
 	for (i = 0; i < size; i++)
 	{
