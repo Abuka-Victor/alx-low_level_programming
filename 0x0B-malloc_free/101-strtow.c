@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * strtow - Splits a string into individual words
@@ -23,7 +24,7 @@ char **strtow(char *str)
 	if (arr == NULL)
 		return (NULL);
 
-
+	printf("Checkpoint 1\n");
 	for (i = wc = 0; i < size; i++)
 	{
 		for (j = wc; str[j] != '\0'; j++)
@@ -32,6 +33,7 @@ char **strtow(char *str)
 				wc++;
 			if (str[j] != ' ' && (str[j + 1] == ' ' || str[j + 1] == '\0'))
 			{
+				printf("Checkpoint 2\n");
 				arr[i] = malloc(sizeof(char) * (j - wc));
 				if (arr[i] == NULL)
 					return (NULL);
@@ -40,6 +42,7 @@ char **strtow(char *str)
 		}
 		for (k = 0; wc <= j; wc++, k++)
 		{
+			printf("Checkpoint 3\n");
 			arr[i][k] = str[wc];
 		}
 		arr[i][k] = '\0';
