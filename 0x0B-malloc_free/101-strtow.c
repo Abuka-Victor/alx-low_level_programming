@@ -14,7 +14,7 @@ char **strtow(char *str)
 	int i, j, k, wc, size;
 
 	if (str == NULL || *str == '\0')
-	       return (NULL);
+		return (NULL);
 
 
 	for (i = size = 0; str[i] != '\0'; i++)
@@ -22,7 +22,7 @@ char **strtow(char *str)
 			size++;
 
 	arr = malloc(sizeof(char *) * (size + 1));
-	if (arr == NULL)
+	if (arr == NULL || size = 0)
 		return (NULL);
 
 	for (i = wc = 0; i < size; i++)
