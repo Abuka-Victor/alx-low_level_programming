@@ -15,16 +15,9 @@ char **strtow(char *str)
 	if (str == NULL || *str == '\0')
 	       return (NULL);
 
-	if (str[0] != ' ')
-		size = 1;
-	else
-		size = 0;
-
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		if (str[i - 1] == ' ' && str[i] != ' ')
+	for (i = size = 0; str[i] != '\0'; i++)
+		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
 			size++;
-	}
 
 	arr = malloc(sizeof(char *) * size);
 	if (arr == NULL)
