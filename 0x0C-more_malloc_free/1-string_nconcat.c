@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * string_nconcat - Concats 2 strings up to a no of bytes
@@ -19,8 +20,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 
-	size1 = sizeof(s1);
-	size2 = sizeof(s2);
+	size1 = size2 = 0;
+	while (s1[size1] != '\0')
+		size1++;
+	while (s2[size2] != '\0')
+		size2++;
 
 	if (n > size2)
 		n = size2;
@@ -33,7 +37,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		newString[i] = s1[i];
 
 	for (j = 0; j < n; j++, i++)
+	{
 		newString[i] = s2[j];
+	}
 	newString[i] = '\0';
 
 	return (newString);
