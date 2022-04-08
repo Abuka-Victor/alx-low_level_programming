@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 /**
  * main - This prints multiplication of 2 numbers
@@ -11,6 +9,7 @@
  */
 int main(int argc, char **argv)
 {
+	int i, j;
 	unsigned long num1, num2;
 
 	if (argc != 3)
@@ -19,18 +18,22 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
+	for (i = 1; i < argc; i++)
+	{
+		for (j = 0; argv[i][j] != '\0'; j++)
+		{
+			if (argv[i][j] < 48 || argv[i][j] > 57)
+			{
+				printf("Error\n");
+				exit(98);
+			}
+		}
+	}
+
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[2]);
 
-	if (num1 == 0 || num2 == 0)
-	{
-		printf("Error\n");
-		exit(98);
-	}
-	else
-	{
-		printf("%ld\n", num1 * num2);
-	}
+	printf("%ld\n", num1 * num2);
 
 	return (0);
 }
