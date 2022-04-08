@@ -10,7 +10,7 @@
 int main(int argc, char **argv)
 {
 	int i, j;
-	unsigned long long num1, num2;
+	unsigned long num1, num2;
 
 	if (argc != 3)
 	{
@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 	num1 = atol(argv[1]);
 	num2 = atol(argv[2]);
 
-	printf("%ld\n", num1 * num2);
+	printf("%lu\n", num1 * num2);
 
 	return (0);
 }
