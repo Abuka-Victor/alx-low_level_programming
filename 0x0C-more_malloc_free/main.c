@@ -29,8 +29,6 @@ int main(void)
 	int *a;
 
 	a = array_range(20, 10);
-	if (a == NULL)
-		printf("Null\n");
 	simple_print_buffer(a, 11);
 	free(a);
 	return (0);
