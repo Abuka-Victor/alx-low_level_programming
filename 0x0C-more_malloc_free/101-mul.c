@@ -30,8 +30,8 @@ int main(int argc, char **argv)
 		}
 	}
 
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[2]);
+	num1 = atol(argv[1]);
+	num2 = atol(argv[2]);
 
 	printf("%ld\n", num1 * num2);
 
