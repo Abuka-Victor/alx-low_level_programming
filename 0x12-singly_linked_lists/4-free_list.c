@@ -16,12 +16,14 @@ void free_list(list_t *head)
 
 	while (node != NULL)
 	{
+		free(node->str);
 		free(node);
 		node = forward;
 		if (forward->next != NULL)
 			forward = forward->next;
 		else
 		{
+			free(forward->str);
 			free(forward);
 			break;
 		}
