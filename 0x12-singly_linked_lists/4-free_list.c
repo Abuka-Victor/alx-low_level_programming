@@ -10,6 +10,7 @@ void free_list(list_t *head)
 {
 	list_t *node;
 	list_t *forward;
+
 	node = head;
 	forward = node->next;
 
