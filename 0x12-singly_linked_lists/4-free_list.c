@@ -15,7 +15,14 @@ void free_list(list_t *head)
 		return;
 
 	node = head;
-	forward = node->next;
+	if (node->next != NULL)
+		forward = node->next;
+	else
+	{
+		free(node->str);
+		free(node);
+		return;
+	}
 
 	while (node != NULL)
 	{
