@@ -11,6 +11,9 @@ size_t print_list(const list_t *h)
 	size_t size = 0;
 	list_t *node;
 
+	if (h == NULL)
+		return (0);
+
 	for (size = 0; size < 1; size++)
 	{
 		if (h->str != NULL)
