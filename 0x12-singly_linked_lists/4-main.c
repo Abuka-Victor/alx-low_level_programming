@@ -19,7 +19,7 @@ int main(void)
     add_node_end(&head, "love");
     add_node_end(&head, "asm");
     print_list(head);
-    free_list(head);
+    free_list(NULL);
     head = NULL;
     return (0);
 }
