@@ -31,5 +31,6 @@ void free_listint2(listint_t **head)
 			node = NULL;
 		}
 	}
-	*head = (void *)0;
+	*head = NULL;
+	head = NULL;
 }
