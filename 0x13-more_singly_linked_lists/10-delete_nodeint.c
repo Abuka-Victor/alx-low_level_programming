@@ -3,7 +3,7 @@
 /**
  * listint_len - Returns the number of nodes in a list
  * @h: The head of the list
- * 
+ *
  * Return: The number of nodes or 0
  */
 size_t listint_len(const listint_t *h)
@@ -35,7 +35,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	if (index > size || head == NULL)
 		return (NULL);
 
-	while(current < index)
+	while (current < index)
 	{
 		node = node->next;
 		current++;
@@ -44,12 +44,11 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 }
 
 /**
- * insert_nodeint_at_index - Inserts a new node at index specified
+ * delete_nodeint_at_index - Inserts a new node at index specified
  * @head: Pointer to head
- * @idx: The index position to replace
- * @n: The number for the node
-
- * Return: The address of the new node
+ * @index: The index position to replace
+ *
+ * Return: 1 if successful, -1, if not
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
@@ -74,7 +73,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		return(1);
 	}
 
-	while(before->next != node)
+	while (before->next != node)
 	{
 		before = before->next;
 	}
