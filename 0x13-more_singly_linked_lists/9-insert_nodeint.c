@@ -48,7 +48,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
  * @head: Pointer to head
  * @idx: The index position to replace
  * @n: The number for the node
-
+ *
  * Return: The address of the new node
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
