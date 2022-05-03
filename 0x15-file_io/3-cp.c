@@ -2,6 +2,8 @@
 
 /**
  * main -  a program that copies the content of a file to another file.
+ * @ac: Argument count
+ * @av: Argument Vector
  *
  * Return: 0 if succesful
  */
@@ -23,7 +25,7 @@ int main(int ac, char *av[])
 		exit(98);
 	}
 
-	fdt = open(av[2], O_WRONLY | O_TRUNC | O_CREAT, 00664);
+	fdt = open(av[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
 	if (fdt == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
@@ -32,10 +34,7 @@ int main(int ac, char *av[])
 	}
 
 	while ((sz = read(fdf, buf, 1024)))
-	{
 		write(fdt, buf, sz);
-	}
-
 	cf = close(fdf);
 	ct = close(fdt);
 	if (cf)
@@ -48,6 +47,5 @@ int main(int ac, char *av[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdf);
 		exit(100);
 	}
-
 	return (0);
 }
