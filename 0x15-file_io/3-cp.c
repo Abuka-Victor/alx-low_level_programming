@@ -29,7 +29,6 @@ int main(int ac, char *av[])
 	if (fdt == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-		close(fdf);
 		exit(99);
 	}
 
