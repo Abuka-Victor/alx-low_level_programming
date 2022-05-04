@@ -29,12 +29,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	buf[sz] = '\0';
 
-	rz = write(STDOUT_FILENO, buf, letters);
-	if (rz != letters || rz != (size_t) sz)
+	rz = write(STDOUT_FILENO, buf, sz);
+	if (rz > letters)
 		return (0);
-	else
-	{
-		close(fd);
-		return (rz);
-	}
+
+	close(fd);
+	return (rz);
 }
