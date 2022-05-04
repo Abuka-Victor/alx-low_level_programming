@@ -33,6 +33,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (rz != letters || rz != (size_t) sz)
 		return (0);
 	else
+	{
+		close(fd);
 		return (rz);
-	close(fd);
+	}
 }
