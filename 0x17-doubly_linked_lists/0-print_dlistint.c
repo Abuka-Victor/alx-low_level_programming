@@ -4,6 +4,7 @@
  * print_dlistint - Prints the elements in a doubly linked list
  * @h: The head of the list
  *
+ * Return: Size of the structure
  */
 size_t print_dlistint(const dlistint_t *h)
 {
