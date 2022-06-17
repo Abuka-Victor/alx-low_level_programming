@@ -2,18 +2,22 @@
 
 /**
  * sum_dlistint - finds the sum of a doubly linked list
- * @h: The head of the list
+ * @head: The head of the list
  *
  * Return: Sum of the structure
  */
 int sum_dlistint(dlistint_t *head)
 {
-	int count = 0;
+	dlistint_t *ptr;
+	int count;
 
-	while (h)
+	ptr = head;
+	count = 0;
+
+	while (ptr)
 	{
-		count += h->n;
-		h = h->next;
+		count += ptr->n;
+		ptr = ptr->next;
 	}
 
 	return (count);
