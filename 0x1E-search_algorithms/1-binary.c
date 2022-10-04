@@ -1,5 +1,15 @@
 #include "search_algos.h"
 
+/**
+ * logger - the function to print what part of the
+ * array we are currently searching
+ * @array: the array
+ * @start: our start
+ * @stop: Our stop
+ *
+ * Return: Null Void
+ */
+
 void logger(int *array, size_t start, size_t stop)
 {
 	size_t i;
@@ -13,6 +23,16 @@ void logger(int *array, size_t start, size_t stop)
 			printf(" %d\n", array[i]);
 	}
 }
+
+/**
+ * search - the actual search algo
+ * @array: The array to be searched
+ * @start: the start value
+ * @stop: the stop value
+ * @value: the value to be searched for
+ *
+ * Return: The index of the value or -1
+ */
 
 int search(int *array, size_t start, size_t stop, int value)
 {
@@ -28,9 +48,9 @@ int search(int *array, size_t start, size_t stop, int value)
 
 	if (array[mid] > value)
 	{
-		return search(array, start, mid - 1, value);
-	}	
-	return search(array, mid + 1, stop, value);
+		return (search(array, start, mid - 1, value));
+	}
+	return (search(array, mid + 1, stop, value));
 }
 
 /**
@@ -49,5 +69,5 @@ int binary_search(int *array, size_t size, int value)
 	if (!array)
 		return (-1);
 
-	return search(array, start, stop, value);
+	return (search(array, start, stop, value));
 }
